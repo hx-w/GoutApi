@@ -11,5 +11,5 @@ func main() {
 		Ext:        "log",
 		TimeFormat: "2006-01-02",
 	})
-	logger.Error("A TEST")
+	logger.Debug("logger setup success!")
 }

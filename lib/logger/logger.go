@@ -2,9 +2,9 @@ package logger
 
 import (
 	"fmt"
-	"os"
-	"log"
 	"io"
+	"log"
+	"os"
 	"path/filepath"
 	"runtime"
 	"sync"
@@ -19,13 +19,13 @@ type Settings struct {
 }
 
 var (
-	logFile *os.File
-	defaultPrefix = ""
+	logFile            *os.File
+	defaultPrefix      = ""
 	defaultCallerDepth = 2
-	logger *log.Logger // true logger
-	mutex sync.Mutex
-	logPrefix = ""
-	levelFlags = []string{"DEBUG", "INFO", "WARNING", "ERROR", "FATAL"}
+	logger             *log.Logger // true logger
+	mutex              sync.Mutex
+	logPrefix          = ""
+	levelFlags         = []string{"DEBUG", "INFO", "WARNING", "ERROR", "FATAL"}
 )
 
 // redefine type
@@ -50,7 +50,7 @@ func initLogger() {
 func SetupLogger(settings *Settings) {
 	dir := settings.Path
 	fileName := fmt.Sprintf("%s-%s-%s", settings.Name, time.Now().Format(settings.TimeFormat), settings.Ext)
-	
+
 	logFile, err := mustOpen(fileName, dir)
 	if err != nil {
 		log.Fatalf("logging.Setup fatal: %s", err)
@@ -59,6 +59,7 @@ func SetupLogger(settings *Settings) {
 	multw := io.MultiWriter(os.Stdout, logFile)
 	logger = log.New(multw, defaultPrefix, flags)
 }
+
 func setPrefix(level logLevel) {
 	_, file, line, ok := runtime.Caller(defaultCallerDepth)
 	if ok {
