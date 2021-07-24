@@ -1,4 +1,4 @@
-name: Go
+name: goutapi-Build-Test
 
 on:
   push:
