@@ -22,6 +22,6 @@ jobs:
       run: sh script/build-darwin.sh
 
     - name: Test
-      run: 
-          cd test 
-        | go test -v
+      run: | 
+        cd test 
+        go test -v
