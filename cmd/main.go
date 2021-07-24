@@ -1,19 +1,15 @@
 package main
 
 import (
-	"../lib/logger"
+	"GoutApi/lib/logger"
 )
 
-
-
 func main() {
-	print("Link Start!")
-
 	logger.SetupLogger(&logger.Settings{
-		Path:	"logs",
-		Name:	"goutapi",
-		Ext:	"log",
+		Path:       "logs",
+		Name:       "GoutApi",
+		Ext:        "log",
 		TimeFormat: "2006-01-02",
 	})
-	logger.Error("hahah")
+	logger.Error("A TEST")
 }
