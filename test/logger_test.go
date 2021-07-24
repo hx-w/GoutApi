@@ -15,7 +15,5 @@ func TestLogger(t *testing.T) {
 
 	logger.Debug("DEBUG test")
 	logger.Info("INFO test")
-	logger.Warn("WARNING test")
-	logger.Error("ERROR test")
-	logger.Fatal("FATAL test")
+	// no need test other status
 }
