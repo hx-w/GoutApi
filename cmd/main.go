@@ -1,7 +1,7 @@
 package main
 
 import (
-	"goutapi/lib/logger"
+	"goutapi/pkg/logger"
 )
 
 func main() {

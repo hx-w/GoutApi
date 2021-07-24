@@ -1,7 +1,7 @@
 package tests
 
 import (
-	"goutapi/lib/logger"
+	"goutapi/pkg/logger"
 	"testing"
 )
 

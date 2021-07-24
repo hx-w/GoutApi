@@ -1,4 +1,4 @@
-name: goutapi-Build-Test
+name: build&test
 
 on:
   push:
@@ -19,9 +19,9 @@ jobs:
         go-version: 1.16
 
     - name: Build
-      run: sh script/build-darwin.sh
+      run: sh scripts/build-darwin.sh
 
     - name: Test
       run: |
-        cd test
+        cd tests
         go test -v
